@@ -37,21 +37,23 @@
             colAge = new DevExpress.XtraGrid.Columns.GridColumn();
             studentBindingSource1 = new BindingSource(components);
             studentBindingSource2 = new BindingSource(components);
+            button1 = new Button();
+            chartControl1 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartControl1).BeginInit();
             SuspendLayout();
             // 
             // gridControl1
             // 
             gridControl1.DataSource = studentBindingSource;
-            gridControl1.Dock = DockStyle.Fill;
             gridControl1.Location = new Point(0, 0);
             gridControl1.MainView = gridView1;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(1644, 899);
+            gridControl1.Size = new Size(1644, 684);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
@@ -64,6 +66,7 @@
             gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colName, colAge });
             gridView1.GridControl = gridControl1;
             gridView1.Name = "gridView1";
+            gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // colID
             // 
@@ -103,11 +106,31 @@
             // 
             studentBindingSource2.DataSource = typeof(Student);
             // 
+            // button1
+            // 
+            button1.Location = new Point(460, 740);
+            button1.Name = "button1";
+            button1.Size = new Size(697, 34);
+            button1.TabIndex = 1;
+            button1.Text = "Export As PDF";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // chartControl1
+            // 
+            chartControl1.Legend.LegendID = -1;
+            chartControl1.Location = new Point(1475, 755);
+            chartControl1.Name = "chartControl1";
+            chartControl1.Size = new Size(8, 8);
+            chartControl1.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1644, 899);
+            ClientSize = new Size(1647, 827);
+            Controls.Add(chartControl1);
+            Controls.Add(button1);
             Controls.Add(gridControl1);
             Name = "Form1";
             Text = "Form1";
@@ -117,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartControl1).EndInit();
             ResumeLayout(false);
         }
 
@@ -130,5 +154,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAge;
         private BindingSource studentBindingSource1;
         private BindingSource studentBindingSource2;
+        private Button button1;
+        private DevExpress.XtraCharts.ChartControl chartControl1;
     }
 }
