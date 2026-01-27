@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -64,20 +63,6 @@
             ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             pageChart = new DevExpress.XtraBars.Navigation.NavigationPage();
             ucChart1 = new ucChart();
@@ -108,6 +93,7 @@
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] { catSystemTools, catChartTools });
             ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPageHome });
+            ribbonControl1.ShowItemCaptionsInQAT = true;
             ribbonControl1.Size = new Size(1795, 237);
             ribbonControl1.Click += ribbonControl1_Click;
             // 
@@ -333,8 +319,9 @@
             // 
             // accordionControl1
             // 
+            accordionControl1.Appearance.AccordionControl.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            accordionControl1.Appearance.AccordionControl.Options.UseFont = true;
             accordionControl1.Dock = DockStyle.Fill;
-            accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement1, accordionControlElement2, accordionControlElement3, accordionControlElement4, accordionControlElement5 });
             accordionControl1.ExpandElementMode = DevExpress.XtraBars.Navigation.ExpandElementMode.Single;
             accordionControl1.Location = new Point(0, 0);
             accordionControl1.Name = "accordionControl1";
@@ -344,107 +331,6 @@
             accordionControl1.TabIndex = 0;
             accordionControl1.ElementClick += accordionControl1_ElementClick;
             accordionControl1.Click += ribbonControl1_Click;
-            // 
-            // accordionControlElement1
-            // 
-            accordionControlElement1.Expanded = true;
-            accordionControlElement1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement1.ImageOptions.SvgImage");
-            accordionControlElement1.Name = "accordionControlElement1";
-            accordionControlElement1.Text = "系统";
-            // 
-            // accordionControlElement2
-            // 
-            accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement6, accordionControlElement7, accordionControlElement8, accordionControlElement13 });
-            accordionControlElement2.Expanded = true;
-            accordionControlElement2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement2.ImageOptions.SvgImage");
-            accordionControlElement2.Name = "accordionControlElement2";
-            accordionControlElement2.Text = "目录-1";
-            // 
-            // accordionControlElement6
-            // 
-            accordionControlElement6.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement6.ImageOptions.SvgImage");
-            accordionControlElement6.Name = "accordionControlElement6";
-            accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement6.Tag = "pageChart";
-            accordionControlElement6.Text = "目录1-1";
-            // 
-            // accordionControlElement7
-            // 
-            accordionControlElement7.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement7.ImageOptions.SvgImage");
-            accordionControlElement7.Name = "accordionControlElement7";
-            accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement7.Tag = "pageSetting";
-            accordionControlElement7.Text = "目录1-2";
-            // 
-            // accordionControlElement8
-            // 
-            accordionControlElement8.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement8.ImageOptions.SvgImage");
-            accordionControlElement8.Name = "accordionControlElement8";
-            accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement8.Text = "目录1-3";
-            // 
-            // accordionControlElement13
-            // 
-            accordionControlElement13.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement14 });
-            accordionControlElement13.Expanded = true;
-            accordionControlElement13.ImageOptions.Image = (Image)resources.GetObject("accordionControlElement13.ImageOptions.Image");
-            accordionControlElement13.Name = "accordionControlElement13";
-            accordionControlElement13.Text = "目录1-4";
-            // 
-            // accordionControlElement14
-            // 
-            accordionControlElement14.Name = "accordionControlElement14";
-            accordionControlElement14.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement14.Text = "目录1-4-1";
-            // 
-            // accordionControlElement3
-            // 
-            accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement9, accordionControlElement10 });
-            accordionControlElement3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement3.ImageOptions.SvgImage");
-            accordionControlElement3.Name = "accordionControlElement3";
-            accordionControlElement3.Text = "目录-2";
-            // 
-            // accordionControlElement9
-            // 
-            accordionControlElement9.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement9.ImageOptions.SvgImage");
-            accordionControlElement9.Name = "accordionControlElement9";
-            accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement9.Text = "目录2-1";
-            // 
-            // accordionControlElement10
-            // 
-            accordionControlElement10.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement10.ImageOptions.SvgImage");
-            accordionControlElement10.Name = "accordionControlElement10";
-            accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement10.Text = "目录2-2";
-            // 
-            // accordionControlElement4
-            // 
-            accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement11 });
-            accordionControlElement4.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement4.ImageOptions.SvgImage");
-            accordionControlElement4.Name = "accordionControlElement4";
-            accordionControlElement4.Text = "目录-3";
-            // 
-            // accordionControlElement11
-            // 
-            accordionControlElement11.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement11.ImageOptions.SvgImage");
-            accordionControlElement11.Name = "accordionControlElement11";
-            accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement11.Text = "目录3-1";
-            // 
-            // accordionControlElement5
-            // 
-            accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement12 });
-            accordionControlElement5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement5.ImageOptions.SvgImage");
-            accordionControlElement5.Name = "accordionControlElement5";
-            accordionControlElement5.Text = "目录-4";
-            // 
-            // accordionControlElement12
-            // 
-            accordionControlElement12.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement12.ImageOptions.SvgImage");
-            accordionControlElement12.Name = "accordionControlElement12";
-            accordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement12.Text = "目录4-1";
             // 
             // navigationFrame1
             // 
@@ -510,6 +396,7 @@
             Name = "Form3";
             Ribbon = ribbonControl1;
             Text = "Form3";
+            Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)splitContainerControl1.Panel1).EndInit();
             splitContainerControl1.Panel1.ResumeLayout(false);
@@ -552,21 +439,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageChart;
         private DevExpress.XtraBars.Navigation.NavigationPage pageSetting;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory catChartTools;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
@@ -581,7 +456,5 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private ucSystem ucSystem1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
     }
 }
