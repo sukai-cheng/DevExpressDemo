@@ -69,6 +69,8 @@
             accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -352,7 +354,7 @@
             // 
             // accordionControlElement2
             // 
-            accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement6, accordionControlElement7, accordionControlElement8 });
+            accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement6, accordionControlElement7, accordionControlElement8, accordionControlElement13 });
             accordionControlElement2.Expanded = true;
             accordionControlElement2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement2.ImageOptions.SvgImage");
             accordionControlElement2.Name = "accordionControlElement2";
@@ -380,6 +382,20 @@
             accordionControlElement8.Name = "accordionControlElement8";
             accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             accordionControlElement8.Text = "目录1-3";
+            // 
+            // accordionControlElement13
+            // 
+            accordionControlElement13.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement14 });
+            accordionControlElement13.Expanded = true;
+            accordionControlElement13.ImageOptions.Image = (Image)resources.GetObject("accordionControlElement13.ImageOptions.Image");
+            accordionControlElement13.Name = "accordionControlElement13";
+            accordionControlElement13.Text = "目录1-4";
+            // 
+            // accordionControlElement14
+            // 
+            accordionControlElement14.Name = "accordionControlElement14";
+            accordionControlElement14.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            accordionControlElement14.Text = "目录1-4-1";
             // 
             // accordionControlElement3
             // 
@@ -565,5 +581,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private ucSystem ucSystem1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
     }
 }
