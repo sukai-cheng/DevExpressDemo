@@ -45,16 +45,21 @@
             barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            catSystemTools = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPageCategory2 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            catChartTools = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPageCategory3 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -73,8 +78,9 @@
             accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             pageChart = new DevExpress.XtraBars.Navigation.NavigationPage();
-            button1 = new Button();
-            pageSettings = new DevExpress.XtraBars.Navigation.NavigationPage();
+            ucChart1 = new ucChart();
+            pageSetting = new DevExpress.XtraBars.Navigation.NavigationPage();
+            ucSystem1 = new ucSystem();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainerControl1).BeginInit();
@@ -87,18 +93,19 @@
             ((System.ComponentModel.ISupportInitialize)navigationFrame1).BeginInit();
             navigationFrame1.SuspendLayout();
             pageChart.SuspendLayout();
-            pageSettings.SuspendLayout();
+            pageSetting.SuspendLayout();
             SuspendLayout();
             // 
             // ribbonControl1
             // 
             ribbonControl1.AllowMinimizeRibbon = false;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItem10, barButtonItem11, barButtonItem12, barButtonItem13, barButtonItem14, barButtonItem15 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItem10, barButtonItem11, barButtonItem12, barButtonItem13, barButtonItem14, barButtonItem15, barButtonGroup1, barButtonItem16, barButtonItem17, barButtonItem18 });
             ribbonControl1.Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 16;
+            ribbonControl1.MaxItemId = 20;
             ribbonControl1.Name = "ribbonControl1";
-            ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] { ribbonPageCategory1, ribbonPageCategory2, ribbonPageCategory3 });
+            ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] { catSystemTools, catChartTools });
+            ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPageHome });
             ribbonControl1.Size = new Size(1795, 237);
             ribbonControl1.Click += ribbonControl1_Click;
             // 
@@ -192,11 +199,38 @@
             barButtonItem15.Id = 15;
             barButtonItem15.Name = "barButtonItem15";
             // 
-            // ribbonPageCategory1
+            // barButtonGroup1
             // 
-            ribbonPageCategory1.Name = "ribbonPageCategory1";
-            ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1, ribbonPage2 });
-            ribbonPageCategory1.Text = "groupSystemTools";
+            barButtonGroup1.Caption = "barButtonGroup1";
+            barButtonGroup1.Id = 16;
+            barButtonGroup1.ItemLinks.Add(barButtonItem16);
+            barButtonGroup1.ItemLinks.Add(barButtonItem17);
+            barButtonGroup1.ItemLinks.Add(barButtonItem18);
+            barButtonGroup1.Name = "barButtonGroup1";
+            // 
+            // barButtonItem16
+            // 
+            barButtonItem16.Caption = "首页按钮-1";
+            barButtonItem16.Id = 17;
+            barButtonItem16.Name = "barButtonItem16";
+            // 
+            // barButtonItem17
+            // 
+            barButtonItem17.Caption = "首页按钮-2";
+            barButtonItem17.Id = 18;
+            barButtonItem17.Name = "barButtonItem17";
+            // 
+            // barButtonItem18
+            // 
+            barButtonItem18.Caption = "首页按钮-3";
+            barButtonItem18.Id = 19;
+            barButtonItem18.Name = "barButtonItem18";
+            // 
+            // catSystemTools
+            // 
+            catSystemTools.Name = "catSystemTools";
+            catSystemTools.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1, ribbonPage2 });
+            catSystemTools.Text = "目录1-2对应的Tab";
             // 
             // ribbonPage1
             // 
@@ -231,11 +265,11 @@
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
-            // ribbonPageCategory2
+            // catChartTools
             // 
-            ribbonPageCategory2.Name = "ribbonPageCategory2";
-            ribbonPageCategory2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage4 });
-            ribbonPageCategory2.Text = "groupChartTools";
+            catChartTools.Name = "catChartTools";
+            catChartTools.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage4, ribbonPage6 });
+            catChartTools.Text = "目录1-1对应的Tab";
             // 
             // ribbonPage4
             // 
@@ -248,22 +282,27 @@
             ribbonPageGroup3.Name = "ribbonPageGroup3";
             ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
-            // ribbonPageCategory3
+            // ribbonPage6
             // 
-            ribbonPageCategory3.Name = "ribbonPageCategory3";
-            ribbonPageCategory3.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage5 });
-            ribbonPageCategory3.Text = "ribbonPageCategory3";
+            ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup5 });
+            ribbonPage6.Name = "ribbonPage6";
+            ribbonPage6.Text = "ribbonPage6";
             // 
-            // ribbonPage5
+            // ribbonPageGroup5
             // 
-            ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup4 });
-            ribbonPage5.Name = "ribbonPage5";
-            ribbonPage5.Text = "ribbonPage5";
+            ribbonPageGroup5.Name = "ribbonPageGroup5";
+            ribbonPageGroup5.Text = "ribbonPageGroup5";
+            // 
+            // ribbonPageHome
+            // 
+            ribbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup4 });
+            ribbonPageHome.Name = "ribbonPageHome";
+            ribbonPageHome.Text = "首页";
             // 
             // ribbonPageGroup4
             // 
+            ribbonPageGroup4.ItemLinks.Add(barButtonGroup1);
             ribbonPageGroup4.Name = "ribbonPageGroup4";
-            ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonPage3
             // 
@@ -309,11 +348,12 @@
             accordionControlElement1.Expanded = true;
             accordionControlElement1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement1.ImageOptions.SvgImage");
             accordionControlElement1.Name = "accordionControlElement1";
-            accordionControlElement1.Text = "亨通石英MES系统";
+            accordionControlElement1.Text = "系统";
             // 
             // accordionControlElement2
             // 
             accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { accordionControlElement6, accordionControlElement7, accordionControlElement8 });
+            accordionControlElement2.Expanded = true;
             accordionControlElement2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement2.ImageOptions.SvgImage");
             accordionControlElement2.Name = "accordionControlElement2";
             accordionControlElement2.Text = "目录-1";
@@ -331,7 +371,7 @@
             accordionControlElement7.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("accordionControlElement7.ImageOptions.SvgImage");
             accordionControlElement7.Name = "accordionControlElement7";
             accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement7.Tag = "pageSettings";
+            accordionControlElement7.Tag = "pageSetting";
             accordionControlElement7.Text = "目录1-2";
             // 
             // accordionControlElement8
@@ -393,38 +433,47 @@
             // navigationFrame1
             // 
             navigationFrame1.Controls.Add(pageChart);
-            navigationFrame1.Controls.Add(pageSettings);
+            navigationFrame1.Controls.Add(pageSetting);
             navigationFrame1.Dock = DockStyle.Fill;
             navigationFrame1.Location = new Point(0, 0);
             navigationFrame1.Name = "navigationFrame1";
-            navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { pageChart, pageSettings });
+            navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { pageChart, pageSetting });
             navigationFrame1.SelectedPage = pageChart;
             navigationFrame1.Size = new Size(1480, 878);
             navigationFrame1.TabIndex = 0;
             navigationFrame1.Text = "navigationFrame1";
+            navigationFrame1.SelectedPageChanged += navigationFrame1_SelectedPageChanged;
             // 
             // pageChart
             // 
             pageChart.Caption = "navigationPage1";
-            pageChart.Controls.Add(button1);
+            pageChart.Controls.Add(ucChart1);
             pageChart.Name = "pageChart";
             pageChart.Size = new Size(1480, 878);
             // 
-            // button1
+            // ucChart1
             // 
-            button1.Location = new Point(582, 385);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            ucChart1.Dock = DockStyle.Fill;
+            ucChart1.Location = new Point(0, 0);
+            ucChart1.Name = "ucChart1";
+            ucChart1.Size = new Size(1480, 878);
+            ucChart1.TabIndex = 0;
             // 
-            // pageSettings
+            // pageSetting
             // 
-            pageSettings.Caption = "navigationPage2";
-            pageSettings.Controls.Add(button2);
-            pageSettings.Name = "pageSettings";
-            pageSettings.Size = new Size(1480, 878);
+            pageSetting.Caption = "navigationPage2";
+            pageSetting.Controls.Add(ucSystem1);
+            pageSetting.Controls.Add(button2);
+            pageSetting.Name = "pageSetting";
+            pageSetting.Size = new Size(1480, 878);
+            // 
+            // ucSystem1
+            // 
+            ucSystem1.Dock = DockStyle.Fill;
+            ucSystem1.Location = new Point(0, 0);
+            ucSystem1.Name = "ucSystem1";
+            ucSystem1.Size = new Size(1480, 878);
+            ucSystem1.TabIndex = 1;
             // 
             // button2
             // 
@@ -456,7 +505,7 @@
             ((System.ComponentModel.ISupportInitialize)navigationFrame1).EndInit();
             navigationFrame1.ResumeLayout(false);
             pageChart.ResumeLayout(false);
-            pageSettings.ResumeLayout(false);
+            pageSetting.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -479,7 +528,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory catSystemTools;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
@@ -490,7 +539,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageChart;
-        private DevExpress.XtraBars.Navigation.NavigationPage pageSettings;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageSetting;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
@@ -502,13 +551,19 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory catChartTools;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory3;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private Button button1;
         private Button button2;
+        private ucChart ucChart1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHome;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private ucSystem ucSystem1;
     }
 }

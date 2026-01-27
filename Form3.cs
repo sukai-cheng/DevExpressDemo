@@ -1,4 +1,5 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.XtraBars.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,51 @@ namespace DevExpressDemo
                 }
 
                 // 动态修改顶部菜单
-                ribbonPageCategory1.Visible = e.Element.Text == "groupSystemTools";
+                // catSystemTools.Visible = e.Element.Text == "groupSystemTools";
+            }
+        }
+
+        private void navigationFrame1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        {
+            foreach (DevExpress.XtraBars.Ribbon.RibbonPageCategory category in ribbonControl1.PageCategories)
+            {
+                category.Visible = false;
+            }
+
+            var currentPage = e.Page as NavigationPage;
+
+            if (currentPage != null)
+            {
+                var userControl = currentPage.Controls.Cast<Control>().FirstOrDefault() as INavigablePage;
+                if (userControl != null)
+                {
+                    UpdateRibbon(userControl.AssociatedRibbonCategoryName);
+                }
+                else
+                {
+                    UpdateRibbon(string.Empty);
+                }
+            }
+        }
+
+        private void UpdateRibbon(string categoryName)
+        {
+            foreach (DevExpress.XtraBars.Ribbon.RibbonPageCategory category in ribbonControl1.PageCategories)
+            {
+                category.Visible = (category.Name == categoryName);
+            }
+
+            // 选择第一个可见的类别中的第一页
+            var activeCat = ribbonControl1.Categories.Cast<DevExpress.XtraBars.Ribbon.RibbonPageCategory> ().FirstOrDefault(c => c.Visible);
+            if (activeCat != null && activeCat.Pages.Count > 0)
+            {
+                ribbonControl1.SelectedPage = activeCat.Pages[0];
+
+            }
+            else
+            {
+                // 默认回到首页
+                ribbonControl1.SelectedPage = ribbonPageHome;
             }
         }
     }
