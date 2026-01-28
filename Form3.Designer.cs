@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -48,39 +49,22 @@
             barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            catSystemTools = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            catChartTools = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            pageChart = new DevExpress.XtraBars.Navigation.NavigationPage();
-            ucChart1 = new ucChart();
-            pageSetting = new DevExpress.XtraBars.Navigation.NavigationPage();
-            ucSystem1 = new ucSystem();
-            button2 = new Button();
+            documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(components);
+            tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(components);
+            dockManager1 = new DevExpress.XtraBars.Docking.DockManager(components);
+            dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)splitContainerControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)splitContainerControl1.Panel1).BeginInit();
-            splitContainerControl1.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainerControl1.Panel2).BeginInit();
-            splitContainerControl1.Panel2.SuspendLayout();
-            splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)accordionControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)navigationFrame1).BeginInit();
-            navigationFrame1.SuspendLayout();
-            pageChart.SuspendLayout();
-            pageSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)documentManager1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tabbedView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dockManager1).BeginInit();
+            dockPanel1.SuspendLayout();
+            dockPanel1_Container.SuspendLayout();
             SuspendLayout();
             // 
             // ribbonControl1
@@ -90,12 +74,11 @@
             ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItem10, barButtonItem11, barButtonItem12, barButtonItem13, barButtonItem14, barButtonItem15, barButtonGroup1, barButtonItem16, barButtonItem17, barButtonItem18 });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 20;
+            ribbonControl1.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             ribbonControl1.Name = "ribbonControl1";
-            ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] { catSystemTools, catChartTools });
             ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPageHome });
             ribbonControl1.ShowItemCaptionsInQAT = true;
-            ribbonControl1.Size = new Size(1795, 237);
-            ribbonControl1.Click += ribbonControl1_Click;
+            ribbonControl1.Size = new Size(2032, 237);
             // 
             // barButtonItem1
             // 
@@ -214,73 +197,6 @@
             barButtonItem18.Id = 19;
             barButtonItem18.Name = "barButtonItem18";
             // 
-            // catSystemTools
-            // 
-            catSystemTools.Name = "catSystemTools";
-            catSystemTools.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1, ribbonPage2 });
-            catSystemTools.Text = "目录1-2对应的Tab";
-            // 
-            // ribbonPage1
-            // 
-            ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup1 });
-            ribbonPage1.Name = "ribbonPage1";
-            ribbonPage1.Text = "catData";
-            // 
-            // ribbonPageGroup1
-            // 
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem1);
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem8);
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem9);
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem10);
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem11);
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem12);
-            ribbonPageGroup1.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
-            ribbonPageGroup1.Name = "ribbonPageGroup1";
-            ribbonPageGroup1.State = DevExpress.XtraBars.Ribbon.RibbonPageGroupState.Expanded;
-            // 
-            // ribbonPage2
-            // 
-            ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup2 });
-            ribbonPage2.Name = "ribbonPage2";
-            ribbonPage2.Text = "catSettings";
-            // 
-            // ribbonPageGroup2
-            // 
-            ribbonPageGroup2.ItemLinks.Add(barButtonItem13);
-            ribbonPageGroup2.ItemLinks.Add(barButtonItem14);
-            ribbonPageGroup2.ItemLinks.Add(barButtonItem15);
-            ribbonPageGroup2.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
-            ribbonPageGroup2.Name = "ribbonPageGroup2";
-            ribbonPageGroup2.Text = "ribbonPageGroup2";
-            // 
-            // catChartTools
-            // 
-            catChartTools.Name = "catChartTools";
-            catChartTools.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage4, ribbonPage6 });
-            catChartTools.Text = "目录1-1对应的Tab";
-            // 
-            // ribbonPage4
-            // 
-            ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup3 });
-            ribbonPage4.Name = "ribbonPage4";
-            ribbonPage4.Text = "ribbonPage4";
-            // 
-            // ribbonPageGroup3
-            // 
-            ribbonPageGroup3.Name = "ribbonPageGroup3";
-            ribbonPageGroup3.Text = "ribbonPageGroup3";
-            // 
-            // ribbonPage6
-            // 
-            ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup5 });
-            ribbonPage6.Name = "ribbonPage6";
-            ribbonPage6.Text = "ribbonPage6";
-            // 
-            // ribbonPageGroup5
-            // 
-            ribbonPageGroup5.Name = "ribbonPageGroup5";
-            ribbonPageGroup5.Text = "ribbonPageGroup5";
-            // 
             // ribbonPageHome
             // 
             ribbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup4 });
@@ -297,26 +213,6 @@
             ribbonPage3.Name = "ribbonPage3";
             ribbonPage3.Text = "ribbonPage3";
             // 
-            // splitContainerControl1
-            // 
-            splitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
-            splitContainerControl1.Dock = DockStyle.Fill;
-            splitContainerControl1.Location = new Point(0, 237);
-            splitContainerControl1.Name = "splitContainerControl1";
-            // 
-            // splitContainerControl1.Panel1
-            // 
-            splitContainerControl1.Panel1.Controls.Add(accordionControl1);
-            splitContainerControl1.Panel1.Text = "Panel1";
-            // 
-            // splitContainerControl1.Panel2
-            // 
-            splitContainerControl1.Panel2.Controls.Add(navigationFrame1);
-            splitContainerControl1.Panel2.Text = "Panel2";
-            splitContainerControl1.Size = new Size(1795, 878);
-            splitContainerControl1.SplitterPosition = 300;
-            splitContainerControl1.TabIndex = 3;
-            // 
             // accordionControl1
             // 
             accordionControl1.Appearance.AccordionControl.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
@@ -327,88 +223,65 @@
             accordionControl1.Name = "accordionControl1";
             accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Fluent;
             accordionControl1.ShowFilterControl = DevExpress.XtraBars.Navigation.ShowFilterControl.Always;
-            accordionControl1.Size = new Size(300, 878);
+            accordionControl1.Size = new Size(189, 941);
             accordionControl1.TabIndex = 0;
             accordionControl1.ElementClick += accordionControl1_ElementClick;
-            accordionControl1.Click += ribbonControl1_Click;
             // 
-            // navigationFrame1
+            // documentManager1
             // 
-            navigationFrame1.Controls.Add(pageChart);
-            navigationFrame1.Controls.Add(pageSetting);
-            navigationFrame1.Dock = DockStyle.Fill;
-            navigationFrame1.Location = new Point(0, 0);
-            navigationFrame1.Name = "navigationFrame1";
-            navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { pageChart, pageSetting });
-            navigationFrame1.SelectedPage = pageChart;
-            navigationFrame1.Size = new Size(1480, 878);
-            navigationFrame1.TabIndex = 0;
-            navigationFrame1.Text = "navigationFrame1";
-            navigationFrame1.SelectedPageChanged += navigationFrame1_SelectedPageChanged;
+            documentManager1.ContainerControl = this;
+            documentManager1.MenuManager = ribbonControl1;
+            documentManager1.View = tabbedView1;
+            documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] { tabbedView1 });
             // 
-            // pageChart
+            // tabbedView1
             // 
-            pageChart.Caption = "navigationPage1";
-            pageChart.Controls.Add(ucChart1);
-            pageChart.Name = "pageChart";
-            pageChart.Size = new Size(1480, 878);
+            tabbedView1.Style = DevExpress.XtraBars.Docking2010.Views.DockingViewStyle.Light;
             // 
-            // ucChart1
+            // dockManager1
             // 
-            ucChart1.Dock = DockStyle.Fill;
-            ucChart1.Location = new Point(0, 0);
-            ucChart1.Name = "ucChart1";
-            ucChart1.Size = new Size(1480, 878);
-            ucChart1.TabIndex = 0;
+            dockManager1.Form = this;
+            dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] { dockPanel1 });
+            dockManager1.TopZIndexControls.AddRange(new string[] { "DevExpress.XtraBars.BarDockControl", "DevExpress.XtraBars.StandaloneBarDockControl", "System.Windows.Forms.MenuStrip", "System.Windows.Forms.StatusStrip", "System.Windows.Forms.StatusBar", "DevExpress.XtraBars.Ribbon.RibbonStatusBar", "DevExpress.XtraBars.Ribbon.RibbonControl", "DevExpress.XtraBars.Navigation.OfficeNavigationBar", "DevExpress.XtraBars.Navigation.TileNavPane", "DevExpress.XtraBars.TabFormControl", "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl", "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl" });
             // 
-            // pageSetting
+            // dockPanel1
             // 
-            pageSetting.Caption = "navigationPage2";
-            pageSetting.Controls.Add(ucSystem1);
-            pageSetting.Controls.Add(button2);
-            pageSetting.Name = "pageSetting";
-            pageSetting.Size = new Size(1480, 878);
+            dockPanel1.Controls.Add(dockPanel1_Container);
+            dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            dockPanel1.FloatSize = new Size(300, 200);
+            dockPanel1.ID = new Guid("762cc9ef-aefe-4225-8bc4-2d403ac0b3ee");
+            dockPanel1.Location = new Point(0, 237);
+            dockPanel1.Name = "dockPanel1";
+            dockPanel1.OriginalSize = new Size(200, 200);
+            dockPanel1.Size = new Size(200, 983);
+            dockPanel1.Text = "调试系统";
             // 
-            // ucSystem1
+            // dockPanel1_Container
             // 
-            ucSystem1.Dock = DockStyle.Fill;
-            ucSystem1.Location = new Point(0, 0);
-            ucSystem1.Name = "ucSystem1";
-            ucSystem1.Size = new Size(1480, 878);
-            ucSystem1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(498, 357);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 0;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            dockPanel1_Container.Controls.Add(accordionControl1);
+            dockPanel1_Container.Location = new Point(4, 38);
+            dockPanel1_Container.Name = "dockPanel1_Container";
+            dockPanel1_Container.Size = new Size(189, 941);
+            dockPanel1_Container.TabIndex = 0;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1795, 1115);
-            Controls.Add(splitContainerControl1);
+            ClientSize = new Size(2032, 1220);
+            Controls.Add(dockPanel1);
             Controls.Add(ribbonControl1);
             Name = "Form3";
             Ribbon = ribbonControl1;
             Text = "Form3";
             Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)splitContainerControl1.Panel1).EndInit();
-            splitContainerControl1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainerControl1.Panel2).EndInit();
-            splitContainerControl1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainerControl1).EndInit();
-            splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)accordionControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)navigationFrame1).EndInit();
-            navigationFrame1.ResumeLayout(false);
-            pageChart.ResumeLayout(false);
-            pageSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)documentManager1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tabbedView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dockManager1).EndInit();
+            dockPanel1.ResumeLayout(false);
+            dockPanel1_Container.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -422,8 +295,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
@@ -431,30 +302,20 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory catSystemTools;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
-        private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
-        private DevExpress.XtraBars.Navigation.NavigationPage pageChart;
-        private DevExpress.XtraBars.Navigation.NavigationPage pageSetting;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory catChartTools;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private Button button2;
-        private ucChart ucChart1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHome;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
-        private ucSystem ucSystem1;
+        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
     }
 }

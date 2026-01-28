@@ -1,18 +1,7 @@
-﻿using DevExpress.CodeParser;
-using DevExpress.Data.Helpers;
-using DevExpress.Drawing.Internal;
-using DevExpress.XtraBars.Navigation;
+﻿using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace DevExpressDemo
 {
@@ -22,32 +11,48 @@ namespace DevExpressDemo
         {
             InitializeComponent();
             ApplyModernStyle();
-        }
-
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
+            this.IsMdiContainer = true;
+            this.documentManager1.MdiParent = this;
+            this.ribbonControl1.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
         }
 
         private void accordionControl1_ElementClick(object sender, ElementClickEventArgs e)
         {
-            if (e.Element.Style != ElementStyle.Item) return;
+            // 过滤掉非页面的点击（比如点击了分组名）
+            if (e.Element.Style != DevExpress.XtraBars.Navigation.ElementStyle.Item) return;
 
-            string pageName = e.Element.Tag?.ToString();
-
-            if (!string.IsNullOrEmpty(pageName))
+            // 获取 Tag 中存储的 UserControl 类名 (如 "DevExpressDemo.ucChart")
+            string ucClassName = e.Element.Tag?.ToString();
+            if (string.IsNullOrEmpty(ucClassName))
             {
-                var targetPage = navigationFrame1.Pages.Cast<NavigationPage>().FirstOrDefault(p => p.Name == pageName);
-                if (targetPage != null)
-                {
-                    navigationFrame1.SelectedPage = targetPage;
-                }
-                else
-                {
-                    XtraMessageBox.Show($"找不到页面: {pageName}. 请检查设计器中的Name属性");
-                }
+                return;
             }
 
+            // 我们用 Control 的 Name 属性作为唯一标识
+            var existingDoc = tabbedView1.Documents.FirstOrDefault(d =>d.Control != null && d.Control.Name == ucClassName);
+            if (existingDoc != null)
+            {
+                tabbedView1.ActivateDocument(existingDoc.Control); // 如果开了，直接切过去
+                return;
+            }
+
+            try
+            {
+                string fullName = "DevExpressDemo." + ucClassName;
+                Type t = Type.GetType(fullName);
+                if (t != null)
+                {
+                    UserControl uc = (UserControl)Activator.CreateInstance(t);
+                    frmChildContainer wrapper = new frmChildContainer(uc, e.Element.Text);
+                    tabbedView1.AddDocument(wrapper);
+                    wrapper.Name = ucClassName;
+                    wrapper.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("页面加载失败: " + ex.Message);
+            }
         }
 
         private void navigationFrame1_SelectedPageChanged(object sender, SelectedPageChangedEventArgs e)
@@ -109,7 +114,7 @@ namespace DevExpressDemo
                     Text = rootNode.DisplayName,
                     Style = ElementStyle.Group,
                     Expanded = true
-                    
+
                 };
 
                 if (!string.IsNullOrEmpty(rootNode.IconName))
@@ -125,7 +130,7 @@ namespace DevExpressDemo
                         Text = childNode.DisplayName,
                         Style = ElementStyle.Item,
                         Tag = childNode.TargetPage,
-                        
+
                     };
                     if (!string.IsNullOrEmpty(childNode.IconName))
                     {
@@ -142,27 +147,18 @@ namespace DevExpressDemo
             return new List<MenuNode>
             {
                 new MenuNode {Id = "1", ParentId = null, DisplayName = "监控中心",IconName = "BO_StateMachine" },
-                new MenuNode {Id = "11", ParentId = "1", DisplayName = "实时曲线",TargetPage = "pageChart", IconName = "ChartType_Line" },
-                new MenuNode {Id = "12", ParentId = "1", DisplayName = "历史数据",TargetPage = "pageHistory",IconName = "Next" },
+                new MenuNode {Id = "11", ParentId = "1", DisplayName = "实时曲线",TargetPage = "ucChart", IconName = "ChartType_Line" },
+                new MenuNode {Id = "12", ParentId = "1", DisplayName = "历史数据",TargetPage = "ucSystem",IconName = "Next" },
                 new MenuNode {Id = "2", ParentId = null, DisplayName = "系统管理",IconName = "BO_StateMachine" },
                 new MenuNode {Id = "21", ParentId = "2", DisplayName = "参数设置",TargetPage = "pageSetting",IconName = "Properties" },
                 new MenuNode {Id = "22", ParentId = "2", DisplayName = "用户权限",TargetPage = "pageUser",IconName = "Next" }
             };
         }
 
-        //private DevExpress.Utils.Svg.SvgImage GetImageByName(string imageName)
-        //{
-        //    if (string.IsNullOrEmpty(imageName)) return null;
-        //    try
-        //    {
-        //        var image = DevExpress.Utils.Design.ImageRes
-        //    }
-        //}
-
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            //navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             // navigationFrame1.TransitionAnimationProperties.FrameCount = 500;
             // mock数据
             var authMenuData = GetMockMenuData();
@@ -171,30 +167,9 @@ namespace DevExpressDemo
             InitDynamicMenu(authMenuData);
 
             // 初始化都设置为不可见
-            foreach(RibbonPageCategory cat in ribbonControl1.Categories)
+            foreach (RibbonPageCategory cat in ribbonControl1.Categories)
             {
                 cat.Visible = false;
-            }
-
-            // Ribbon动态切换
-            if (navigationFrame1.Pages.Count > 0)
-            {
-                var firstPage = navigationFrame1.Pages[0];
-
-                navigationFrame1.SelectedPage = (NavigationPage)firstPage;
-
-                if (firstPage != null)
-                {
-                    var userControl = firstPage.Controls.Cast<Control>().FirstOrDefault() as INavigablePage;
-                    if (userControl != null)
-                    {
-                        UpdateRibbon(userControl.AssociatedRibbonCategoryName);
-                    }
-                    else
-                    {
-                        UpdateRibbon(string.Empty);
-                    }
-                }
             }
 
         }
