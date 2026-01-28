@@ -181,19 +181,19 @@
             // 
             // barButtonItem16
             // 
-            barButtonItem16.Caption = "首页按钮-1";
+            barButtonItem16.Caption = "用户信息";
             barButtonItem16.Id = 17;
             barButtonItem16.Name = "barButtonItem16";
             // 
             // barButtonItem17
             // 
-            barButtonItem17.Caption = "首页按钮-2";
+            barButtonItem17.Caption = "当班信息";
             barButtonItem17.Id = 18;
             barButtonItem17.Name = "barButtonItem17";
             // 
             // barButtonItem18
             // 
-            barButtonItem18.Caption = "首页按钮-3";
+            barButtonItem18.Caption = "退出登录";
             barButtonItem18.Id = 19;
             barButtonItem18.Name = "barButtonItem18";
             // 
@@ -205,6 +205,7 @@
             // 
             // ribbonPageGroup4
             // 
+            ribbonPageGroup4.AllowTextClipping = false;
             ribbonPageGroup4.ItemLinks.Add(barButtonGroup1);
             ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 

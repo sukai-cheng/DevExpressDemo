@@ -30,10 +30,14 @@
         {
             button1 = new Button();
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             SuspendLayout();
             // 
@@ -49,12 +53,18 @@
             // ribbonControl1
             // 
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonGroup1, barButtonItem2, barButtonItem3, barButtonItem4 });
             ribbonControl1.Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 2;
+            ribbonControl1.MaxItemId = 6;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] { ribbonPageCategory1 });
             ribbonControl1.Size = new Size(683, 225);
+            // 
+            // barButtonItem1
+            // 
+            barButtonItem1.Caption = "导出";
+            barButtonItem1.Id = 1;
+            barButtonItem1.Name = "barButtonItem1";
             // 
             // ribbonPageCategory1
             // 
@@ -70,15 +80,36 @@
             // 
             // ribbonPageGroup2
             // 
-            ribbonPageGroup2.ItemLinks.Add(barButtonItem1);
+            ribbonPageGroup2.ItemLinks.Add(barButtonGroup1);
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
-            // barButtonItem1
+            // barButtonGroup1
             // 
-            barButtonItem1.Caption = "导出";
-            barButtonItem1.Id = 1;
-            barButtonItem1.Name = "barButtonItem1";
+            barButtonGroup1.Caption = "barButtonGroup1";
+            barButtonGroup1.Id = 2;
+            barButtonGroup1.ItemLinks.Add(barButtonItem2);
+            barButtonGroup1.ItemLinks.Add(barButtonItem3);
+            barButtonGroup1.ItemLinks.Add(barButtonItem4);
+            barButtonGroup1.Name = "barButtonGroup1";
+            // 
+            // barButtonItem2
+            // 
+            barButtonItem2.Caption = "导出";
+            barButtonItem2.Id = 3;
+            barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            barButtonItem3.Caption = "查询";
+            barButtonItem3.Id = 4;
+            barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            barButtonItem4.Caption = "删除";
+            barButtonItem4.Id = 5;
+            barButtonItem4.Name = "barButtonItem4";
             // 
             // ucSystem
             // 
@@ -101,5 +132,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

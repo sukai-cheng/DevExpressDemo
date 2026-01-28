@@ -151,7 +151,11 @@ namespace DevExpressDemo
                 new MenuNode {Id = "12", ParentId = "1", DisplayName = "历史数据",TargetPage = "ucSystem",IconName = "Next" },
                 new MenuNode {Id = "2", ParentId = null, DisplayName = "系统管理",IconName = "BO_StateMachine" },
                 new MenuNode {Id = "21", ParentId = "2", DisplayName = "参数设置",TargetPage = "pageSetting",IconName = "Properties" },
-                new MenuNode {Id = "22", ParentId = "2", DisplayName = "用户权限",TargetPage = "pageUser",IconName = "Next" }
+                new MenuNode {Id = "22", ParentId = "2", DisplayName = "用户权限",TargetPage = "pageUser",IconName = "Next" },
+                new MenuNode {Id = "3", ParentId = null, DisplayName = "设备管理",IconName = "BO_StateMachine" },
+                new MenuNode {Id = "31", ParentId = "3", DisplayName = "南向控制",TargetPage = "ucSouthDeviceControl",IconName = "Properties" },
+                new MenuNode {Id = "32", ParentId = "3", DisplayName = "北向控制",TargetPage = "ucNorthDeviceControl",IconName = "Next" },
+                new MenuNode {Id = "32", ParentId = "3", DisplayName = "Topic设置",TargetPage = "topicSetting",IconName = "Next" }
             };
         }
 

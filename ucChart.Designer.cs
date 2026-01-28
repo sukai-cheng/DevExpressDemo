@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -39,28 +38,26 @@
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            barButtonGroup2 = new DevExpress.XtraBars.BarButtonGroup();
+            barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(369, 346);
-            button1.Name = "button1";
-            button1.Size = new Size(238, 60);
-            button1.TabIndex = 0;
-            button1.Text = "This is ucChart UserControl";
-            button1.UseVisualStyleBackColor = true;
             // 
             // ribbonControl1
             // 
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3, barCheckItem1, barButtonItem4, barButtonGroup1, barButtonGroup2, barButtonItem5, barButtonItem6, barButtonItem7 });
             ribbonControl1.Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 4;
+            ribbonControl1.MaxItemId = 11;
             ribbonControl1.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] { ribbonPageCategory1 });
-            ribbonControl1.Size = new Size(1045, 225);
+            ribbonControl1.Size = new Size(1434, 225);
             // 
             // barButtonItem1
             // 
@@ -70,7 +67,7 @@
             // 
             // barButtonItem2
             // 
-            barButtonItem2.Caption = "barButtonItem2";
+            barButtonItem2.Caption = "开始";
             barButtonItem2.Id = 2;
             barButtonItem2.Name = "barButtonItem2";
             // 
@@ -82,7 +79,7 @@
             // 
             // ribbonPageCategory1
             // 
-            ribbonPageCategory1.Appearance.ForeColor = Color.FromArgb(255, 128, 0);
+            ribbonPageCategory1.Appearance.ForeColor = Color.White;
             ribbonPageCategory1.Appearance.Options.UseForeColor = true;
             ribbonPageCategory1.Name = "ribbonPageCategory1";
             ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage2, ribbonPage1 });
@@ -96,15 +93,14 @@
             // 
             // ribbonPageGroup3
             // 
-            ribbonPageGroup3.ItemLinks.Add(barButtonItem2);
+            ribbonPageGroup3.ItemLinks.Add(barButtonGroup2);
             ribbonPageGroup3.Name = "ribbonPageGroup3";
-            ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // ribbonPage1
             // 
             ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup2 });
             ribbonPage1.Name = "ribbonPage1";
-            ribbonPage1.Text = "ribbonPage1";
+            ribbonPage1.Text = "功能集合-2";
             // 
             // ribbonPageGroup2
             // 
@@ -118,22 +114,65 @@
             ribbonPageGroup1.Name = "ribbonPageGroup1";
             ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
+            // barCheckItem1
+            // 
+            barCheckItem1.Caption = "barCheckItem1";
+            barCheckItem1.Id = 4;
+            barCheckItem1.Name = "barCheckItem1";
+            // 
+            // barButtonItem4
+            // 
+            barButtonItem4.Caption = "关闭";
+            barButtonItem4.Id = 5;
+            barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonGroup1
+            // 
+            barButtonGroup1.Caption = "barButtonGroup1";
+            barButtonGroup1.Id = 6;
+            barButtonGroup1.Name = "barButtonGroup1";
+            // 
+            // barButtonGroup2
+            // 
+            barButtonGroup2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
+            barButtonGroup2.Caption = "功能组";
+            barButtonGroup2.Id = 7;
+            barButtonGroup2.ItemLinks.Add(barButtonItem5);
+            barButtonGroup2.ItemLinks.Add(barButtonItem6);
+            barButtonGroup2.ItemLinks.Add(barButtonItem7);
+            barButtonGroup2.Name = "barButtonGroup2";
+            // 
+            // barButtonItem5
+            // 
+            barButtonItem5.Caption = "启动";
+            barButtonItem5.Id = 8;
+            barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            barButtonItem6.Caption = "停止";
+            barButtonItem6.Id = 9;
+            barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            barButtonItem7.Caption = "重启";
+            barButtonItem7.Id = 10;
+            barButtonItem7.Name = "barButtonItem7";
+            // 
             // ucChart
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(ribbonControl1);
-            Controls.Add(button1);
             Name = "ucChart";
-            Size = new Size(1045, 920);
+            Size = new Size(1434, 920);
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
@@ -144,5 +183,12 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         public DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }
