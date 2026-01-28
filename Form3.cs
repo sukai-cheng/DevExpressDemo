@@ -22,7 +22,7 @@ namespace DevExpressDemo
             if (e.Element.Style != DevExpress.XtraBars.Navigation.ElementStyle.Item) return;
 
             // 获取 Tag 中存储的 UserControl 类名 (如 "DevExpressDemo.ucChart")
-            string ucClassName = e.Element.Tag?.ToString();
+            string? ucClassName = e.Element.Tag?.ToString();
             if (string.IsNullOrEmpty(ucClassName))
             {
                 return;
@@ -39,14 +39,21 @@ namespace DevExpressDemo
             try
             {
                 string fullName = "DevExpressDemo." + ucClassName;
-                Type t = Type.GetType(fullName);
+                Type? t = Type.GetType(fullName);
                 if (t != null)
                 {
-                    UserControl uc = (UserControl)Activator.CreateInstance(t);
-                    frmChildContainer wrapper = new frmChildContainer(uc, e.Element.Text);
-                    tabbedView1.AddDocument(wrapper);
-                    wrapper.Name = ucClassName;
-                    wrapper.Show();
+                    var instance = Activator.CreateInstance(t);
+                    if (instance is UserControl uc)
+                    {
+                        frmChildContainer wrapper = new frmChildContainer(uc, e.Element.Text);
+                        tabbedView1.AddDocument(wrapper);
+                        wrapper.Name = ucClassName;
+                        wrapper.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("页面加载失败: 无法创建 UserControl 实例。");
+                    }
                 }
             }
             catch (Exception ex)
