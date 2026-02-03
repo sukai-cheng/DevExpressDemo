@@ -226,7 +226,7 @@
             stackPanel1.Controls.Add(labelControl2);
             stackPanel1.Controls.Add(simpleButton2);
             stackPanel1.Controls.Add(comboBoxEdit1);
-            stackPanel1.Location = new Point(342, 0);
+            stackPanel1.Location = new Point(387, 0);
             stackPanel1.Name = "stackPanel1";
             stackPanel1.Padding = new Padding(10);
             stackPanel1.Size = new Size(871, 91);
@@ -249,6 +249,7 @@
             simpleButton1.Size = new Size(194, 53);
             simpleButton1.TabIndex = 1;
             simpleButton1.Text = "上一页";
+            simpleButton1.Click += simpleButton1_Click;
             // 
             // textEdit1
             // 
@@ -275,6 +276,7 @@
             simpleButton2.Size = new Size(187, 55);
             simpleButton2.TabIndex = 4;
             simpleButton2.Text = "下一页";
+            simpleButton2.Click += simpleButton2_Click;
             // 
             // comboBoxEdit1
             // 
@@ -284,7 +286,7 @@
             comboBoxEdit1.MenuManager = ribbonControl1;
             comboBoxEdit1.Name = "comboBoxEdit1";
             comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            comboBoxEdit1.Properties.Items.AddRange(new object[] { "20", "50", "100" });
+            comboBoxEdit1.Properties.Items.AddRange(new object[] { "5", "20", "50", "100" });
             comboBoxEdit1.Size = new Size(126, 28);
             comboBoxEdit1.TabIndex = 5;
             comboBoxEdit1.SelectedIndexChanged += comboBoxEdit1_SelectedIndexChanged_1;
