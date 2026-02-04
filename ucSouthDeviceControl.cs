@@ -106,5 +106,21 @@ namespace DevExpressDemo
                 LoadData();
             }
         }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // 1. 实例化新增窗体
+            using (FrmDeviceEdit frm = new FrmDeviceEdit())
+            {
+                // 1. 确保设置了起始位置
+                frm.StartPosition = FormStartPosition.CenterParent;
+
+                // 2. 以对话框形式弹出 (ShowDialog 会阻塞主窗体直到它关闭)
+                if (frm.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
+        }
     }
 }

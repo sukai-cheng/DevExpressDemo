@@ -22,6 +22,13 @@ namespace DevExpressDemo.Respository
             return result;
         }
 
+        public bool CreateDevice(DeviceInfo deviceInfo)
+        {
+            DatabaseContext databaseContext = new DatabaseContext();
+            var sqlSugarClient = databaseContext.DB;
+            return sqlSugarClient.Insertable(deviceInfo).ExecuteCommand() > 0;
+        }
+
         // 分页 Repo 方法
         public List<DeviceInfo> GetDeviceList(int pageIndex, int pageSize, out int totalCount)
         {

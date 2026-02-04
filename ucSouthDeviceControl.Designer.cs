@@ -109,6 +109,7 @@
             barButtonItem4.Caption = "新增";
             barButtonItem4.Id = 5;
             barButtonItem4.Name = "barButtonItem4";
+            barButtonItem4.ItemClick += barButtonItem4_ItemClick;
             // 
             // ribbonPageCategory1
             // 
